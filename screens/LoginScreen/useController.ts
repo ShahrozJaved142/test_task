@@ -10,7 +10,6 @@ import { loginUser } from '../../reducers/session';
 
 const useController = () => {
     const users = useSelector((state: RootState) => state.session.userData);
-    console.log(JSON.stringify(users,null,2));
     const dispatch =useDispatch()
     const navigation = useNavigation<NavigationProp>()
     const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(true);
