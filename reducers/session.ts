@@ -28,21 +28,19 @@ const sessionSlice = createSlice({
     addUser: (state, action: PayloadAction<UserProfile>) => {
       if (!state.userData) state.userData = [];
 
-      // Check if user already exists based on email
       const userExists = state.userData.some(user => user.email === action.payload.email);
 
       if (!userExists) {
         state.userData = [...state.userData, action.payload];
-        console.log("add user ==", [...state.userData, action.payload]);
       } else {
         console.warn("User with this email already exists!");
       }
     },
     loginUser: (state, action: PayloadAction<{ email: string; password: string }>) => {
+
       if (!state.userData) state.userData = [];
 
       const user = state.userData.find(user => user.email === action.payload.email);
-
       if (user && user.password === action.payload.password) {
         state.isSignedIn = true;
         state.currentUser = user;

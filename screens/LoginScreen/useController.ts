@@ -21,6 +21,7 @@ const useController = () => {
             password: defaultValidationRules.password
         },
         onSubmit: (values) => {
+            // navigation.navigate(NavKeys.BottomTabBarNavigation);
             const user = users.find(user => user.email === values.email);
             if (!user) {
                 showErrorMsg("User does not exist");

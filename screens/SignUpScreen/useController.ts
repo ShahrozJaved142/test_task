@@ -33,7 +33,7 @@ const useController = () => {
                 return;
             }
 
-            dispatch(updateUser(values));
+            dispatch(addUser(values));
             showSuccessMsg("User registered successfully");
             navigation.goBack();
         }
